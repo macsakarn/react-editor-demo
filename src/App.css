@@ -1,0 +1,69 @@
+.header {
+    width: 100vw;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff0000;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin-top: 3rem;
+    display: flex;
+    align-self: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: 70vw;
+    height: 60vh;
+}
+
+.editor {
+    width: 50%;
+}
+
+.runner {
+    flex-grow: 1;
+    color: #fff;
+    background-color: #00ff00;
+}
+
+.footer {
+    margin-top: 3rem;
+    align-self: center;
+    display: flex;
+    gap: 10rem;
+
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #30CFD0, #c43ad6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn {
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 12px 32px;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.btn-gradient-border {
+    color: rgb(var(--text-color));
+    border: 2px double transparent;
+    background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
