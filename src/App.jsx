@@ -1,5 +1,6 @@
 import React,{useRef, useState} from 'react'
 import Editor from './components/Editor'
+import axios from 'axios';
 import './App.css'
 
 export default function App() {
@@ -10,9 +11,16 @@ export default function App() {
     editorRef.current = editor
   }
 
-  function showValue() {
-    setResult(editorRef.current?.getValue())
-    alert(editorRef.current?.getValue())
+  async function showValue() {
+    try {
+      const response = await axios.post('http://localhost:3000/', {
+        script: editorRef.current?.getValue()
+      });
+     
+      setResult(response.data.message)
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -28,8 +36,7 @@ export default function App() {
 
       <div className="footer">
         <button className='btn-gradient-border  btn' onClick={showValue}>Run</button>
-        <button className='btn-gradient-border  btn'>Upload</button>
-        <button className='btn-gradient-border  btn'>Reset</button>
+        <button className='btn-gradient-border  btn' onClick={()=>window.location.reload(false)}>Reset</button>
       </div>
     </div>
   )

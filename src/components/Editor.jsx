@@ -7,8 +7,8 @@ function EditorProxy({handleEditorDidMount}) {
   return (
     <Editor
     theme="vs-dark"
-        defaultLanguage="javascript"
-        defaultValue="// some comment"
+        defaultLanguage="python"
+        defaultValue="#Some code"
         onMount={handleEditorDidMount}
       />
   );
